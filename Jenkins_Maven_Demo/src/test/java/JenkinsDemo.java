@@ -28,7 +28,7 @@ public class JenkinsDemo
     @Test
     public void testCasePassed()
     {
-        Assert.assertTrue(driver.findElement(By.xpath("//form[@id='login_form']")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//form[@id='u_0_g']")).isDisplayed());
     }
 
     @Test
