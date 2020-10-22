@@ -9,7 +9,7 @@ public class TestDemo {
 	@Test
 	public void testAdd() {
 		Demo d=new Demo();
-		int ans=d.add(10, 10);
+		int ans=d.add(20, 20);
 		assertEquals(100, ans);
 	}
 
