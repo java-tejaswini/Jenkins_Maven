@@ -1,0 +1,40 @@
+pipeline {
+    environment{
+        username = 'XXXX'
+         git_id_cre = credentials('git_id')
+       
+    }
+    agent any
+   
+
+    stages {
+        stage('Build') {
+           
+            steps {
+                script{
+                   withCredentials([usernamePassword(credentialsId: 'git_id', usernameVariable:'${env.git_id_cre_USR}', passwordVariable: '${env.git_id_cre_PSW}')]) 
+                   {
+                        print 'username=' + username
+                      // Get some code from a GitHub repository
+                      git credentialsId: 'git_id', url: 'https://github.com/java-tejaswini/Jenkins_Maven.git' 
+
+                // Run Maven on a Unix agent.
+               // sh "mvn -Dmaven.test.failure.ignore=true clean package"
+
+                // To run Maven on a Windows agent, use
+                       bat "mvn -f Jenkins_Maven_demo/pom.xml -Dmaven.test.failure.ignore=true clean package"
+                   }
+                }
+            }
+
+            post {
+                // If Maven was able to run the tests, even if some of the test
+                // failed, record the test results and archive the jar file.
+                success {
+                    junit '**/target/surefire-reports/TEST-*.xml'
+                   // archiveArtifacts 'target/*.jar'
+                }
+            }
+        }
+    }
+}
