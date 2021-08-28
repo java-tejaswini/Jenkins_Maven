@@ -23,6 +23,20 @@
 			<artifactId>selenium-java</artifactId>
 			<version>3.10.0</version>
 		</dependency>
+		
+		<plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.7.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M4</version>
+            </plugin>
+        </plugins>
+		
 	</dependencies>
 
 	<build>
@@ -60,7 +74,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-report-plugin</artifactId>
-				<version>2.22.0</version>
+				<version>3.0.0-M4</version>
 			</plugin>
 		</plugins>
 	</reporting>
