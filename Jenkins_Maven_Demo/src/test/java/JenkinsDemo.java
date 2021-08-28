@@ -28,13 +28,16 @@ public class JenkinsDemo
     @Test
     public void testCasePassed()
     {
-        Assert.assertTrue(driver.findElement(By.xpath("//form[@id='u_0_g']")).isDisplayed());
+//         Assert.assertTrue(driver.findElement(By.xpath("//form[@id='u_0_g']")).isDisplayed());
+         Assert.assertTrue( driver.findElement(By.xpath("//button[text()='Sign in']")).isDisplayed());
+        
     }
 
     @Test
     public void testCaseFailed()
     {
         //Assert.assertTrue(driver.findElement(By.xpath("//form[@id='failed case']")).isDisplayed());
+        
     }
 
     @Ignore
