@@ -25,7 +25,7 @@ public class JenkinsDemo
     {
         driver.quit();
     }
-
+/*
     @Test
     public void testCasePassed()
     {
@@ -33,7 +33,7 @@ public class JenkinsDemo
          Assert.assertTrue( driver.findElement(By.xpath("//button[text()='Sign in']")).isDisplayed());
         
     }
-
+*/
     @Test
     public void testCaseFailed()
     {
@@ -55,11 +55,12 @@ public class JenkinsDemo
         Assert.assertEquals(expectedUrl,actualUrl);
         
     }
-
+/*
     @Ignore
     @Test
     public void testCaseIgnored()
     {
         Assert.assertTrue(driver.findElement(By.xpath("//form[@id='ignored case']")).isDisplayed());
     }
+    */
 }
